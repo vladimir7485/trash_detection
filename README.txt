@@ -23,13 +23,20 @@
     Note: set your own paths inside!
 
     b. Create symbolic link to runs directory:
-        ln -s ${HOST_DIR}/yolo9/runs ${HOST_DIR}/code/trash_detection/thirdparty/yolov9/runs
+        cd ${HOME_DIR}/code/trash_detection
+        ln -s ${HOME_DIR}/yolo9/runs ${HOME_DIR}/code/trash_detection/runs
 
     c. Download pretrained models from YOLOv9 github page.
 
-    d. Then launch training script:
+    d. Launch training script:
         sh train_dual.sh
     Note: edit params inside!
 
-5. Training artefacts:
+5. Training artefacts (download them and put into ${HOME_DIR}/code/trash_detection/runs directory to use later):
     https://drive.google.com/drive/folders/1RmrcPJzu4-WQqTjBTgcbi52Rw3KBeMGr?usp=drive_link
+
+6. To evaluate artefact run the following script (modify paths inside!):
+    sh val.sh
+    Note: if you use Pillow >= 10, then modify thirdparty/yolov9/utils/plots.py file as follows:
+        86  w, h = self.font.getsize(label)  # text width, height -->
+        86  _, _, w, h = self.font.getbbox(label)  # text width, height <--

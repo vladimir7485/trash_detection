@@ -2,7 +2,7 @@
 IMAGE=nvidia_pytorch_23.10-py3:v9
 
 # Host directory with codes and datasets
-HOST_DIR=/home/vladimir
+HOME_DIR=/home/vladimir
 
 # Workbench directory (for saving training artefacts, pretrained models, etc.)
 YOLO9_WORKBENCH=/home/vladimir/Work/Projects/yolo9
@@ -17,9 +17,10 @@ docker run \
 --ipc host \
 --gpus all \
 --runtime=nvidia \
--v /home/vladimir/Code:${HOST_DIR}/code \
--v /home/vladimir/Work/Datasets:${HOST_DIR}/datasets \
--v ${YOLO9_WORKBENCH}:${HOST_DIR}/yolo9 \
--e YOLO9_WORKBENCH=${HOST_DIR}/yolo9 \
+-v /home/vladimir/Code:${HOME_DIR}/code \
+-v /home/vladimir/Work/Datasets:${HOME_DIR}/datasets \
+-v ${YOLO9_WORKBENCH}:${HOME_DIR}/yolo9 \
+-e YOLO9_WORKBENCH=${HOME_DIR}/yolo9 \
+-e HOME_DIR=${HOME_DIR} \
 -u $(id -u ${USER}):$(id -g ${USER}) \
 ${IMAGE} bash
