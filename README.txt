@@ -25,6 +25,7 @@
     b. Create symbolic link to runs directory:
         cd ${HOME_DIR}/code/trash_detection
         ln -s ${HOME_DIR}/yolo9/runs ${HOME_DIR}/code/trash_detection/runs
+        ln -s ${HOME_DIR}/yolo9/runs ${HOME_DIR}/code/trash_detection/thirdparty/yolov9/runs
 
     c. Download pretrained models from YOLOv9 github page.
 
