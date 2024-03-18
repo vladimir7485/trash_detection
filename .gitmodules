@@ -1,0 +1,3 @@
+[submodule "thirdparty/yolov9"]
+	path = thirdparty/yolov9
+	url = https://github.com/WongKinYiu/yolov9
