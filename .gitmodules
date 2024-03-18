@@ -1,3 +1,6 @@
 [submodule "thirdparty/yolov9"]
 	path = thirdparty/yolov9
 	url = https://github.com/WongKinYiu/yolov9
+[submodule "thirdparty/TACO"]
+	path = thirdparty/TACO
+	url = https://github.com/pedropro/TACO.git
