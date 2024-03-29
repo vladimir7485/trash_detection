@@ -3,13 +3,12 @@ python  thirdparty/yolov9/train_dual.py \
     --img 640 \
     --batch 16 \
     --device 0 \
-    --weights /home/vladimir/yolo9/models/yolov9-c.pt \
+    --weights ${WORK_DIR}/Projects/yolo9/models/yolov9-c.pt \
     --workers 8 \
     --cfg thirdparty/yolov9/models/detect/yolov9-c.yaml \
-    --name yolov9-c-taco-freeze-bn \
+    --name yolov9-c-taco-freeze-bn-nwd \
     --hyp hyp.scratch-high.yaml \
     --min-items 0 \
     --epochs 500 \
     --close-mosaic 15 \
-    --freeze 10 \
-    --resume
+    --freeze 10
