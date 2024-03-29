@@ -1,0 +1,62 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "val_dual",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/thirdparty/yolov9/val_dual.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--data", "data/taco.yaml",
+                "--img", "640",
+                "--batch", "24",
+                "--conf", "0.001",
+                "--iou", "0.7",
+                "--device", "0",
+                "--weights", "/home/vladimir/Code/yolov9/runs/train/yolov9-c-taco-freeze-bn-ft-nwd/weights/best.pt",
+                "--name", "yolov9-c-taco-from-scratch"
+            ],
+            "env": {
+                "YOLO9_WORKBENCH": "/home/vladimir/Work/Projects/yolo9",
+                "DATASETS": "/home/vladimir/Work/Datasets"
+            }
+        },
+        {
+            "name": "train_dual",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/train_dual.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--data", "data/taco.yaml",
+                "--img", "640",
+                "--batch", "16",
+                "--device", "0",
+                "--weights", "/home/vladimir/yolo9/models/yolov9-c.pt",
+                "--workers", "8",
+                "--cfg", "models/detect/yolov9-c.yaml",
+                "--name", "yolov9-c-taco-ft",
+                "--hyp", "hyp.scratch-high.yaml",
+                "--min-items", "0",
+                "--epochs", "500",
+                "--close-mosaic", "15",
+                "--freeze", "10"
+            ],
+            "env": {
+                "YOLO9_WORKBENCH": "/home/vladimir/yolo9",
+                "DATASETS": "/home/vladimir/datasets"
+            }
+        },
+    ]
+}
