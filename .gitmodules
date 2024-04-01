@@ -1,6 +1,6 @@
 [submodule "thirdparty/yolov9"]
 	path = thirdparty/yolov9
-	url = https://github.com/WongKinYiu/yolov9
+	url = git@github.com:vladimir7485/yolov9.git
 	ignore = all
 [submodule "thirdparty/TACO"]
 	path = thirdparty/TACO
